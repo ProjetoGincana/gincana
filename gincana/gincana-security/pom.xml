@@ -33,7 +33,7 @@
         <dependency>
             <artifactId>gincana-entity</artifactId>
             <groupId>ifsul.gincana</groupId>
-            <version>1.0.0.0</version>
+            <version>${project.version}</version>
             <type>jar</type>
         </dependency>
     </dependencies>
