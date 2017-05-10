@@ -18,7 +18,7 @@ module.exports = {
     },
     output: {
         path: join(__dirname, "./gincana-web/src/main/resources/static"),
-        filename:  "js/[name].js",
+        filename:  "js/[name]-bundle.js",
         publicPath: 'gincana-web/src/main/resources/static'
     },
     devServer: {
