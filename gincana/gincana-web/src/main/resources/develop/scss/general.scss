@@ -69,7 +69,12 @@ input {
 	margin-right: 55px;
 }
 
-.container-fluid {
+.container .navbar-default {
+	background-color: white;
+	border-color: white;
+}
+
+.navbar > .container-fluid {
 	border-bottom: 2px solid $main-color;
 	padding-bottom: 15px;
 
