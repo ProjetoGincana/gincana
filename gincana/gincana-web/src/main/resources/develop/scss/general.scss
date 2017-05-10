@@ -4,7 +4,7 @@ body {
 	font-family: "Gotham Narrow", Gotham, sans-serif;
 }
 
-h1 {
+#login-container > h1 {
 	text-transform: uppercase;
 	color: $main-color !important;
 	font-weight: bold;
@@ -20,4 +20,61 @@ h1 {
 .a {
 	font-style: italic;
 	color: $main-color;
+}
+
+#logo {
+	max-height: 500px;
+	max-width: 500px;
+	width: auto;
+	height: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	vertical-align: middle;
+}
+
+nav {
+	text-transform: uppercase;
+	font-family: "Gotham Narrow Bold", Gotham, sans-serif;
+	font-weight: bold;
+}
+
+.search {
+	max-height: 20px;
+	max-width: 20px;
+	margin-left: 55px;
+	position: relative;
+	left: 25px;
+	top: 2px;
+
+
+}
+.busca {
+	float: left;
+	font-style: italic;
+	margin-top: 25px;
+	margin-left: 30px;
+}
+ul {
+	outline: 2px solid #E0E0E0;
+
+}
+input {
+	width: 300px;
+}
+.nav-item {
+	padding: 11px 10px;
+	height: 40px;
+}
+.media {
+	margin-top: 25px;
+	float: right;
+	margin-right: 55px;
+}
+
+.container {
+	border-bottom: 2px solid $main-color;
+}
+
+.ret {
+	width: 100%;
 }

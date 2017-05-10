@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login</title>
+    <th:block th:include="fragments :: header(Login)"></th:block>
     <link rel="stylesheet" th:href="@{/css/login-bundle.css}" />
 </head>
 <body>
+    <th:block th:include="fragments :: navbar">
+
+    </th:block>
     <div id="login-container" class="container-fluid">
         <h1>Login</h1>
         <div class="row">
