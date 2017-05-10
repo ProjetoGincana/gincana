@@ -33,14 +33,17 @@
                         <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Contato </font></a></li>
                     </ul>
                 </nav>
-            </div>
 
-            <img th:src = "@{img/busca.png}" class = "search busca"/><input type = "search" placeholder = "Busque aqui" class = "busca"/>
-            <span class = "media">
-                <a href = "#"><img th:src = "@{img/fb.png}"/></a>
-                <a href = "#"><img th:src = "@{img/tt.png}"/></a>
-                <a href = "#"><img th:src = "@{img/ig.png}"/></a>
-	    	</span>
+                <div class="busca">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type = "search" placeholder = "Busque aqui" />
+                </div>
+                <span class = "media">
+                    <a href = "#"><img th:src = "@{img/fb.png}"/></a>
+                    <a href = "#"><img th:src = "@{img/tt.png}"/></a>
+                    <a href = "#"><img th:src = "@{img/ig.png}"/></a>
+                </span>
+            </div>
         </div>
     </nav>
 </div>
