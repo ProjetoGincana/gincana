@@ -24,12 +24,10 @@ body {
 
 #logo {
 	max-height: 500px;
-	max-width: 500px;
-	width: auto;
+	max-width: 60%;
 	height: auto;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	vertical-align: middle;
+	margin: 15px auto;
+	display: block;
 }
 
 nav {
@@ -71,10 +69,8 @@ input {
 	margin-right: 55px;
 }
 
-.container {
+.container-fluid {
 	border-bottom: 2px solid $main-color;
-}
+	padding-bottom: 15px;
 
-.ret {
-	width: 100%;
 }

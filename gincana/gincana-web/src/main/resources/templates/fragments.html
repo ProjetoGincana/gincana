@@ -10,26 +10,39 @@
 
 <body>
 <div th:fragment="navbar" >
-    <img th:src="@{'img/logo.jpg'}" id="logo" class = "center-block"/>
-    <div class = "container">
-        <nav>
-            <ul class="nav nav-justified">
-                <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Home </font></a></li>
-                <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Equipes </font></a></li>
-                <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Edições Anteriores</font></a></li>
-                <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Sobre </font></a></li>
-                <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Provas </font></a></li>
-                <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Contato </font></a></li>
-            </ul>
-        </nav>
+    <img th:src="@{'img/logo.jpg'}" id="logo" />
+    <nav class = "navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"  />
+                    <span class="icon-bar" />
+                    <span class="icon-bar" />
+                </button>
+            </div>
 
-        <img th:src = "@{img/busca.png}" class = "search busca"/><input type = "search" placeholder = "Busque aqui" class = "busca"/>
-        <span class = "media">
-			<a href = "#"><img th:src = "@{img/fb.png}"/></a>
-			<a href = "#"><img th:src = "@{img/tt.png}"/></a>
-			<a href = "#"><img th:src = "@{img/ig.png}"/></a>
-		</span>
-    </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <nav>
+                    <ul class="nav nav-justified">
+                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Home </font></a></li>
+                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Equipes </font></a></li>
+                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Edições Anteriores</font></a></li>
+                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Sobre </font></a></li>
+                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Provas </font></a></li>
+                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Contato </font></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <img th:src = "@{img/busca.png}" class = "search busca"/><input type = "search" placeholder = "Busque aqui" class = "busca"/>
+            <span class = "media">
+                <a href = "#"><img th:src = "@{img/fb.png}"/></a>
+                <a href = "#"><img th:src = "@{img/tt.png}"/></a>
+                <a href = "#"><img th:src = "@{img/ig.png}"/></a>
+	    	</span>
+        </div>
+    </nav>
 </div>
 
 <div th:fragment="paginator(list, page)">
