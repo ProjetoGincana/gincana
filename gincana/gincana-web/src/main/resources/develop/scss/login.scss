@@ -4,13 +4,6 @@
 	min-width: 350px;
 }
 
-input [type=password], [type=email] {
-	border:1px solid #CFD0CF;
-	border-radius:10px;
-	height: 40px;
-	width: 100%;
-}
-
 #here {
 	text-decoration: underline;
 	color: $main-color;		
@@ -31,6 +24,12 @@ input [type=password], [type=email] {
 		}
 		label {
 			color: $main-color;
+		}
+		input {
+			max-width: none;
+			border: 1px solid #CFD0CF;
+			border-radius:10px;
+			height: 40px;
 		}
 	}
 }
