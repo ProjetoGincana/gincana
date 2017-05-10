@@ -27,3 +27,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+gincana/gincana-web/src/main/resources/static/css/login-bundle\.css
