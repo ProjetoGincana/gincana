@@ -14,7 +14,7 @@ if (devBuild){
 
 module.exports = {
     entry: {
-        "login-bundle": "./gincana-web/src/main/resources/develop/js/login.js"
+        "login": "./gincana-web/src/main/resources/develop/js/login.js"
     },
     output: {
         path: join(__dirname, "./gincana-web/src/main/resources/static"),
