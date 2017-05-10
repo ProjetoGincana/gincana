@@ -12,15 +12,16 @@
         <h1>Login</h1>
         <div class="row">
             <div class="col-xs-12 ">
-                <form name = "loginform" method = "post" class="form col-centered">
+                <!--/*@thymesVar id="usuario" type="ifsul.gincana.entity.entities.Usuario"*/-->
+                <form name="loginform" method="post" th:action="@{/login}" th:object="${usuario}" class="form col-centered">
                     <div class="form-group">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="aluno@ifsul.com" />
+                        <input id="email" name="username" class="form-control" placeholder="aluno@ifsul.com" type="email"/>
                     </div>
 
                     <div class="form-group">
                         <label for="pass">Senha:</label>
-                        <input type="password" id="pass" class="form-control" name="pass" />
+                        <input id="pass" name="password" class="form-control" type="password" />
                         <a href = "#">Esqueceu sua senha?</a>
                     </div>
                     <!--/*@thymesVar id="param" type=""*/-->
