@@ -2,13 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:include="fragments :: header(Login)"></th:block>
+    <th:block th:include="fragments :: header(Login)" />
     <link rel="stylesheet" th:href="@{/css/login-bundle.css}" />
 </head>
 <body>
-    <th:block th:include="fragments :: navbar">
-
-    </th:block>
+<div class="container">
+    <th:block th:include="fragments :: navbar" />
     <div id="login-container" class="container-fluid">
         <h1>Login</h1>
         <div class="row">
@@ -41,6 +40,7 @@
             </div>
         </div>
     </div>
-    <script th:src="@{/js/login-bundle.js}" type="application/javascript"></script>
+</div>
+<script th:src="@{/js/login-bundle.js}" type="application/javascript"></script>
 </body>
 </html>
