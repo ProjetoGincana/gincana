@@ -28,4 +28,5 @@ dist/
 nbdist/
 .nb-gradle/
 
-gincana/gincana-web/src/main/resources/static/css/login-bundle\.css
+gincana/gincana-web/src/main/resources/static/css/
+gincana/gincana-web/src/main/resources/static/js/
