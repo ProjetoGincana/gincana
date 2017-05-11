@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head(title)">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title th:text="${title}" />
-</head>
+    <head th:fragment="head(title)">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title th:text="${title}" />
+    </head>
 
-<body>
-<div th:fragment="navbar" >
-    <img th:src="@{'img/logo.jpg'}" id="logo" />
-    <nav class = "navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"  />
-                    <span class="icon-bar" />
-                    <span class="icon-bar" />
-                </button>
-            </div>
+    <body>
+        <div th:fragment="navbar" >
+            <figure>
+                <img th:src="@{'img/logo.jpg'}" id="logo" />
+            </figure>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <nav>
-                    <ul class="nav nav-justified">
-                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Home </font></a></li>
-                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Equipes </font></a></li>
-                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Edições Anteriores</font></a></li>
-                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Sobre </font></a></li>
-                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Provas </font></a></li>
-                        <li  class="nav-item"> <a class="nav-link" href = "#"><font color="#606060"> Contato </font></a></li>
-                    </ul>
-                </nav>
+            <nav class = "navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"  />
+                            <span class="icon-bar" />
+                            <span class="icon-bar" />
+                        </button>
+                    </div>
 
-                <div class="busca">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    <input type = "search" placeholder = "Busque aqui" />
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <nav>
+                            <ul class="nav nav-justified">
+                                <li class="nav-item"> <a class="nav-link" href="#">Home</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Equipes</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Edições Anteriores</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Sobre</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Provas</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Contato</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="busca">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            <input type = "search" placeholder = "Busque aqui" />
+                        </div>
+
+                        <span class = "media">
+                            <a href = "#"><img th:src = "@{img/fb.png}"/></a>
+                            <a href = "#"><img th:src = "@{img/tt.png}"/></a>
+                            <a href = "#"><img th:src = "@{img/ig.png}"/></a>
+                        </span>
+                    </div>
                 </div>
-                <span class = "media">
-                    <a href = "#"><img th:src = "@{img/fb.png}"/></a>
-                    <a href = "#"><img th:src = "@{img/tt.png}"/></a>
-                    <a href = "#"><img th:src = "@{img/ig.png}"/></a>
-                </span>
-            </div>
+            </nav>
         </div>
-    </nav>
-</div>
 
-<div th:fragment="paginator(list, page)">
-    <ul th:if="${not #lists.isEmpty(list) and list.totalPages > 1 }" class="pagination">
-        <li th:class="${list.first} ? 'disabled' : ''">
-            <a th:if="${not list.first}" th:href="@{${page}(page=${0},size=${list.size})}">
-                <span class="glyphicon glyphicon-backward"></span>
-            </a>
-            <a th:if="${list.first}" href="javascript:void(0);">
-                <span class="glyphicon glyphicon-backward"></span>
-            </a>
-        </li>
-        <li th:each="i : ${#numbers.sequence(0, list.totalPages -1)}"
-            th:class="${list.number eq i} ? 'active' : ''">
-            <a th:if="${not(list.number eq i)}" th:href="@{${page}(page=${i},size=${list.size})}"
-               th:text="${i+1}"></a>
-            <a th:if="${list.number eq i}" href="javascript:void(0);" th:text="${i+1}"></a>
-        </li>
-        <li th:class="${list.last} ? 'disabled' : ''">
-            <a th:if="${not list.last}" th:href="@{${page}(page=${list.totalPages -1},size=${list.size})}">
-                <span class="glyphicon glyphicon-forward"></span>
-            </a>
-            <a th:if="${list.last}" href="javascript:void(0);">
-                <span class="glyphicon glyphicon-forward"></span>
-            </a>
-        </li>
-    </ul>
-</div>
+        <div th:fragment="paginator(list, page)">
+            <ul th:if="${not #lists.isEmpty(list) and list.totalPages > 1 }" class="pagination">
+                <li th:class="${list.first} ? 'disabled' : ''">
+                    <a th:if="${not list.first}" th:href="@{${page}(page=${0},size=${list.size})}">
+                        <span class="glyphicon glyphicon-backward"></span>
+                    </a>
+                    <a th:if="${list.first}" href="javascript:void(0);">
+                        <span class="glyphicon glyphicon-backward"></span>
+                    </a>
+                </li>
+                <li th:each="i : ${#numbers.sequence(0, list.totalPages -1)}"
+                    th:class="${list.number eq i} ? 'active' : ''">
+                    <a th:if="${not(list.number eq i)}" th:href="@{${page}(page=${i},size=${list.size})}"
+                       th:text="${i+1}"></a>
+                    <a th:if="${list.number eq i}" href="javascript:void(0);" th:text="${i+1}"></a>
+                </li>
+                <li th:class="${list.last} ? 'disabled' : ''">
+                    <a th:if="${not list.last}" th:href="@{${page}(page=${list.totalPages -1},size=${list.size})}">
+                        <span class="glyphicon glyphicon-forward"></span>
+                    </a>
+                    <a th:if="${list.last}" href="javascript:void(0);">
+                        <span class="glyphicon glyphicon-forward"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-<footer th:fragment="footer">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</footer>
-</body>
+        <footer th:fragment="footer">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </footer>
+    </body>
 </html>

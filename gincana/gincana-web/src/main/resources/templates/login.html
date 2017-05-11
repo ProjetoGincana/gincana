@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <th:block th:include="fragments :: header(Login)" />
-    <link rel="stylesheet" th:href="@{/css/login-bundle.css}" />
-</head>
-<body>
-<div class="container">
-    <th:block th:include="fragments :: navbar" />
-    <div id="login-container" class="container-fluid">
-        <h1>Login</h1>
-        <div class="row">
-            <div class="col-xs-12 ">
-                <!--/*@thymesVar id="usuario" type="ifsul.gincana.entity.entities.Usuario"*/-->
-                <form name="loginform" method="post" th:action="@{/login}" th:object="${usuario}" class="form col-centered">
-                    <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input id="email" name="username" class="form-control" placeholder="aluno@ifsul.com" type="email"/>
-                    </div>
+    <head>
+        <th:block th:include="fragments :: header(Login)" />
+        <link rel="stylesheet" th:href="@{/css/login-bundle.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <th:block th:include="fragments :: navbar" />
+            <div id="login-container" class="container-fluid">
+                <h1>Login</h1>
+                <div class="row">
+                    <div class="col-xs-12 ">
+                        <!--/*@thymesVar id="usuario" type="ifsul.gincana.entity.entities.Usuario"*/-->
+                        <form name="loginform" method="post" th:action="@{/login}" th:object="${usuario}" class="form col-centered">
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input id="email" name="username" class="form-control" placeholder="aluno@ifsul.com" type="email"/>
+                            </div>
 
-                    <div class="form-group">
-                        <label for="pass">Senha:</label>
-                        <input id="pass" name="password" class="form-control" type="password" />
-                        <a href = "#">Esqueceu sua senha?</a>
-                    </div>
-                    <!--/*@thymesVar id="param" type=""*/-->
-                    <div th:if="${param.error != null}">
-                        <div class="alert alert-danger text-center col-xs-8 col-xs-offset-2" role="alert">
-                            Usuário ou senha incorreto.
+                            <div class="form-group">
+                                <label for="pass">Senha:</label>
+                                <input id="pass" name="password" class="form-control" type="password" />
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                            <!--/*@thymesVar id="param" type=""*/-->
+                            <div th:if="${param.error != null}">
+                                <div class="alert alert-danger text-center col-xs-8 col-xs-offset-2" role="alert">
+                                    Usuário ou senha incorreto.
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="submit" class="btn btn-primary" id="entrar-button" value="Entrar" />
+                            </div>
+                        </form>
+
+                        <div class="text-center">
+                            <p class="a">Ainda não possui uma conta? Crie <a href="#" id="here">aqui</a></p>
                         </div>
                     </div>
-                    <div class="form-group text-center">
-                        <input type = "submit" class="btn btn-primary" id = "entrar-button" value = "Entrar" />
-                    </div>
-                </form>
-
-                <div class="text-center">
-                    <p class="a">Ainda não possui uma conta? Crie <a href = "#" id = "here">aqui</a></p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<script th:src="@{/js/login-bundle.js}" type="application/javascript"></script>
-</body>
+        <script th:src="@{/js/login-bundle.js}" type="application/javascript"></script>
+    </body>
 </html>
