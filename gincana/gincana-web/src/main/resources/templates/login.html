@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <th:block th:include="fragments :: header(Login)" />
-        <link rel="stylesheet" th:href="@{/css/login-bundle.css}" />
-    </head>
+    <th:block th:replace="fragments :: head(Login)" />
     <body>
         <div class="container">
             <th:block th:include="fragments :: navbar" />
@@ -12,8 +9,7 @@
                 <h1>Login</h1>
                 <div class="row">
                     <div class="col-xs-12 ">
-                        <!--/*@thymesVar id="usuario" type="ifsul.gincana.entity.entities.Usuario"*/-->
-                        <form name="loginform" method="post" th:action="@{/login}" th:object="${usuario}" class="form col-centered">
+                        <form name="loginform" method="post" th:action="@{/login}" class="form col-centered">
                             <div class="form-group">
                                 <label for="email">E-mail:</label>
                                 <input id="email" name="username" class="form-control" placeholder="aluno@ifsul.com" type="email"/>
@@ -42,6 +38,6 @@
                 </div>
             </div>
         </div>
-        <script th:src="@{/js/login-bundle.js}" type="application/javascript"></script>
+        <th:block th:include="fragments :: footer" />
     </body>
 </html>

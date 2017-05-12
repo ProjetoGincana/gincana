@@ -2,9 +2,7 @@
   * @author Marcelo Henrique
 */
 
-require('../scss/general.scss');
-require('../scss/login.scss');
-require('bootstrap-loader');
+require('../../scss/login.scss');
 
 $(window).on('load', () => {
 
