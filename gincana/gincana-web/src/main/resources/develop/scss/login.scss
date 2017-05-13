@@ -159,6 +159,17 @@ h2,
 	flex-grow: 1;
 }
 
+.cabecalho-perfil {
+	flex-grow: 1;
+	text-align: center;
+}
+
+.cabecalho-perfil-foto {
+	height: 150px;
+	width: 150px;
+	margin: 0 auto;
+}
+
 /*Corpo*/
 .conteudo .container {
 	margin-top: 2em;
