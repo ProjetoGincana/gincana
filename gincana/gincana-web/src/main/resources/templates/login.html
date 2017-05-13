@@ -1,43 +1,140 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <th:block th:replace="fragments :: head(Login)" />
-    <body>
-        <div class="container">
-            <th:block th:include="fragments :: navbar" />
-            <div id="login-container" class="container-fluid">
-                <h1>Login</h1>
-                <div class="row">
-                    <div class="col-xs-12 ">
-                        <form name="loginform" method="post" th:action="@{/login}" class="form col-centered">
-                            <div class="form-group">
-                                <label for="email">E-mail:</label>
-                                <input id="email" name="username" class="form-control" placeholder="aluno@ifsul.com" type="email"/>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="pass">Senha:</label>
-                                <input id="pass" name="password" class="form-control" type="password" />
-                                <a href="#">Esqueceu sua senha?</a>
-                            </div>
-                            <!--/*@thymesVar id="param" type=""*/-->
-                            <div th:if="${param.error != null}">
-                                <div class="alert alert-danger text-center col-xs-8 col-xs-offset-2" role="alert">
-                                    Usuário ou senha incorreto.
-                                </div>
-                            </div>
-                            <div class="form-group text-center">
-                                <input type="submit" class="btn btn-primary" id="entrar-button" value="Entrar" />
-                            </div>
-                        </form>
+<th:block th:replace="fragments :: head('Gincana - Login')" />
 
-                        <div class="text-center">
-                            <p class="a">Ainda não possui uma conta? Crie <a href="#" id="here">aqui</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <img class="cabecalho-logo" src="img/logo.png"
+          alt="Logo da Gincana IFSul"/>
+
+      <section class="cabecalho-informacoes">
+        <div class="cabecalho-informacoes-localizacao">
+          Av. Copacabana, 100 - Piratini, Sapucaia do Sul - RS, 93216-120
         </div>
-        <th:block th:include="fragments :: footer" />
-    </body>
+
+        <div class="cabecalho-informacoes-telefone">(51) 3452-9200</div>
+
+        <nav class="cabecalho-informacoes-redes-sociais">
+          <ul>
+            <li class="cabecalho-informacoes-redes-sociais-icones facebook">
+              <a href="#">Facebook</a>
+            </li>
+            <li class="cabecalho-informacoes-redes-sociais-icones twitter">
+              <a href="#">Twitter</a>
+            </li>
+            <li class="cabecalho-informacoes-redes-sociais-icones instagram">
+              <a href="#">Instagram</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <aside class="cabecalho-login">
+        <form class="cabecalho-login-form" action="/login" method="POST">
+          <fieldset class="cabecalho-login-form-fieldset">
+            <legend class="cabecalho-login-form-legend"
+                    for="email-usuario">Email</legend>
+            <div>
+              <input class="cabecalho-login-form-input email"
+                    type="email" name="username"/>
+            </div>
+          </fieldset>
+          <fieldset class="cabecalho-login-form-fieldset">
+            <legend class="cabecalho-login-form-legend"
+                    for="senha-usuario">Senha</legend>
+            <div>
+              <input class="cabecalho-login-form-input senha"
+                    type="password" name="password"/>
+            </div>
+          </fieldset>
+          <button class="cabecalho-login-form-submit"
+                  type="submit">Entrar</button>
+        </form>
+
+        <div class="cabecalho-linha"></div>
+
+        <section class="cabecalho-login-visitante">
+          <h2>Não é um usuário? Acesse como visitante!</h2>
+          <button class="cabecalho-login-visitante-submit"
+                  type="submit">Visitante</button>
+        </section>
+      </aside>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div class="container">
+      <section class="conteudo-informacoes">
+        <h1 class="conteudo-informacoes-titulo">Sobre a Gincana</h1>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.</span> <br />
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.</span> <br />
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.</span>
+      </section>
+
+      <div class="conteudo-linha"></div>
+
+      <aside class="conteudo-cadastro">
+        <h1 class="conteudo-cadastro-titulo">Cadastro</h1>
+        <form class="conteudo-cadastro-form" action="#">
+          <fieldset class="conteudo-cadastro-form-fieldset">
+            <legend class="conteudo-cadastro-form-legend"
+                    for="email-usuario">Email</legend>
+            <div>
+              <input class="conteudo-cadastro-form-input email"
+                    type="email" name="email-usuario"/>
+            </div>
+          </fieldset>
+          <fieldset class="conteudo-cadastro-form-fieldset">
+            <legend class="conteudo-cadastro-form-legend"
+                    for="senha-usuario">Senha</legend>
+            <div>
+              <input class="conteudo-cadastro-form-input senha"
+                    type="password" name="senha-usuario"/>
+            </div>
+          </fieldset>
+          <fieldset class="conteudo-cadastro-form-fieldset">
+            <legend class="conteudo-cadastro-form-legend"
+                    for="matricula-usuario">Matricula</legend>
+            <div>
+              <input class="conteudo-cadastro-form-input matricula"
+                    type="text" name="matricula-usuario"/>
+            </div>
+          </fieldset>
+          <fieldset class="conteudo-cadastro-form-fieldset">
+            <legend class="conteudo-cadastro-form-legend"
+                    for="nascimento-usuario">Data de Nascimento</legend>
+            <div>
+              <input class="conteudo-cadastro-form-input nascimento"
+                    type="date" name="nascimento-usuario"/>
+            </div>
+          </fieldset>
+          <button class="conteudo-cadastro-form-submit"
+                  type="submit">Cadastrar</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+  <th:block th:include="fragments :: footer" />
+</body>
 </html>

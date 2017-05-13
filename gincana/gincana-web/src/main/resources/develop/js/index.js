@@ -3,16 +3,13 @@
  */
 import Router from "./router/router"
 
-require('../scss/general.scss');
-require('bootstrap-loader');
-
 const routes = [
     {
         module: "login",
         paths: "/login"
     },
     {
-         module: "home",
+        module: "home",
         paths: "/"
     }
 ];
