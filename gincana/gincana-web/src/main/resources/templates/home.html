@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <th:block th:replace="fragments :: head(Home)" />
-    <body>
-        <div class="container">
-            <th:block th:include="fragments :: navbar" />
-            <!-- TODO: Inserir botão de logout na navbar -->
-            <a th:href="@{/logout}">Logout</a>
-            <th:block th:include="fragments :: footer" />
-        </div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments :: head(Home)" />
+
+<body>
+  <div class="container">
+    <th:block th:include="fragments :: navbar" />
+    <!-- TODO: Inserir botão de logout na navbar -->
+    <a th:href="@{/logout}">Logout</a>
+    <th:block th:include="fragments :: footer" />
+  </div>
+</body>
+
 </html>
