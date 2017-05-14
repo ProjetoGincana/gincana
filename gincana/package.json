@@ -1,5 +1,5 @@
 {
-  "name": "projetogincana",
+  "name": "gincana",
   "version": "1.0.0",
   "description": "Projeto da Gincana",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProjetoGincana/projetogincana.git"
+    "url": "git+https://github.com/ProjetoGincana/gincana.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ProjetoGincana/projetogincana/issues"
+    "url": "https://github.com/ProjetoGincana/gincana/issues"
   },
-  "homepage": "https://github.com/ProjetoGincana/projetogincana#readme",
+  "homepage": "https://github.com/ProjetoGincana/gincana#readme",
   "dependencies": {
     "jquery": "^3.1.1",
     "babel-core": "^6.23.1",
