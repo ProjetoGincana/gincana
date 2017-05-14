@@ -13,75 +13,34 @@
 }
 
 .conteudo-equipes-tabela {
-	flex-grow: 2;
-	border-collapse: separate;
-	border-spacing: .25em;
-	margin: 1em 0;
+	border-spacing: 0;
 	width: 90%;
-
-	[colspan] {
-		text-align: center;
-		font-style: italic;
+  text-align: left;
+	
+	th, td{
+		border-bottom: 1px solid black;
 	}
-
-	[rowspan] {
-		vertical-align: middle;
-	}
-
-	th,
-	td {
-		padding: 1em;
-	}
-
 	th {
-		font-weight: bold;
+		background-color: $main-color;
 		color: white;
 	}
-
-	thead th {
-		background-color: $main-color;
+	tr:nth-child(even) {
+		background-color: #f2f2f2
 	}
-
-	tbody th {
-		background-color: #B6B6B6;
-	}
-
-	td {
-		background-color: #EEE;
-	}
+  tr:nth-child(2){
+    background-color: #fdf87f;
+  }
+  tr:nth-child(3){
+    background-color: #e2e2f9;
+  }
 }
-
-.conteudo-equipes-tabela {
-border-spacing: 0;
-width: 90%;
-text-align: left;
-
-th, td{
-border-bottom: 1px solid black;
-}
-th {
-background-color: $main-color;
-color: white;
-}
-tr:nth-child(even) {
-background-color: #f2f2f2
-}
-tr:nth-child(2){
-background-color: #fdf87f;
-}
-tr:nth-child(3){
-background-color: #e2e2f9;
-}
-}
-*/
 
 .conteudo-provas {
 	width: 40%;
 }
 
-
 @media(max-width: 1024px) {
-	.conteudo-equipes {
+  .conteudo-equipes {
 		width: 100%;
 	}
 }
