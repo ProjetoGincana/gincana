@@ -56,7 +56,7 @@
           </thead>
           <tbody>
             <tr th:each="equipePontuada,i: ${equipesRanqueadas}">
-              <td th:text="${i.index+1}"></td>
+              <th th:text="${i.index+1}"></th>
               <td th:text="${equipePontuada.key.nome}"></td>
               <td th:text="${equipePontuada.value}"></td>
             </tr>
