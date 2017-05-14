@@ -47,16 +47,20 @@
       <div class="conteudo-equipes">
         <h1 class="conteudo-equipes-titulo">Equipes Ranqueadas</h1>
         <table class="conteudo-equipes-tabela">
-          <tr>
-            <th>Posição</th>
-            <th>Nome Equipe</th>
-            <th>Pontuação</th>
-          </tr>
-          <tr th:each="equipePontuada,i: ${equipesRanqueadas}">
-            <td th:text="${i.index+1}"></td>
-            <td th:text="${equipePontuada.key.nome}"></td>
-            <td th:text="${equipePontuada.value}"></td>            
-          </tr>
+          <thead>
+            <tr>
+              <th>Posição</th>
+              <th>Nome Equipe</th>
+              <th>Pontuação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="equipePontuada,i: ${equipesRanqueadas}">
+              <td th:text="${i.index+1}"></td>
+              <td th:text="${equipePontuada.key.nome}"></td>
+              <td th:text="${equipePontuada.value}"></td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="conteudo-provas">
