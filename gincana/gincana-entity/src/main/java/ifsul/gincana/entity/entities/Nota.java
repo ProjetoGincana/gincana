@@ -22,7 +22,7 @@ public class Nota implements Serializable {
     @NotNull
     @Basic(optional = false)
     @Column(name = "valor_nota")
-    private int valor;
+    private Double valor;
 
     @ManyToOne(cascade = ALL)
     @JoinColumn(name = "id_equipe")
@@ -40,11 +40,11 @@ public class Nota implements Serializable {
         this.id = id;
     }
 
-    public int getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
