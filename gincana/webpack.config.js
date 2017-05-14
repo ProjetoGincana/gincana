@@ -1,16 +1,9 @@
 /**
- * Created by Marcelo Henrique on 07/05/2017.
+ * @author Marcelo Henrique
  */
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const {join} = require('path');
-const devBuild = process.env.NODE_ENV != "production";
-
-if (devBuild){
-    console.log("In Development")
-}else{
-    console.log("In Production")
-}
 
 module.exports = {
     entry: {
@@ -51,8 +44,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: 'css/[name]-bundle.css',
-            allChunks: true,
-            disable: devBuild
+            allChunks: true
         }),
     ]
 };
