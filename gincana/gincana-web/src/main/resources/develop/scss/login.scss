@@ -114,34 +114,7 @@ h2,
 
 .cabecalho-login-form-input,
 .conteudo-cadastro-form-input {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
 	padding: 10px;
-}
-
-.cabecalho-login-form-submit,
-.cabecalho-login-visitante-submit,
-.conteudo-cadastro-form-submit {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	color: #FFF;
-	cursor: pointer;
-}
-
-.cabecalho-login-form-submit {
-	background-color: #a4a4a4;
-}
-
-.cabecalho-login-visitante-submit {
-	background-color: #4DBA7A;
-}
-
-.cabecalho-login-form-submit,
-.cabecalho-login-form-input,
-.conteudo-cadastro-form-input {
-	outline: 0;
-	border: 1px solid #4DBA7A;
-	box-sizing: border-box;
 }
 
 .cabecalho-login-form-submit {
@@ -185,17 +158,19 @@ h2,
 .cabecalho-login-form-submit,
 .cabecalho-login-visitante-submit,
 .conteudo-cadastro-form-submit {
+	margin-top: 2%;
 	display: inline-block;
 	height: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
-	background-color: #8e9ca6;
+	background-color: transparent;
 	text-transform: uppercase;
 	border-radius: 5px;
 }
 
+.cabecalho-login-form-submit,
 .cabecalho-login-visitante-submit {
-	background-color: #15b856;
+	color: #FFF;
 }
 
 .conteudo-informacoes-titulo {
@@ -276,4 +251,10 @@ h2,
 		order: -1;
 		margin-bottom: 2em;
 	}
+}
+
+input {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #000;
 }
