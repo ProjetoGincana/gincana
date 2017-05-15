@@ -45,6 +45,26 @@
 		background-color: #B6B6B6;
 	}
 
+	tbody {
+		tr {
+			&:nth-child(1){
+				th {
+					background-color: #daa520;
+				}
+			}
+			&:nth-child(2){
+				th {
+					background-color: #9c9db7;
+				}
+			}
+			&:nth-child(3){
+				th {
+					background-color: #cd7f32;
+				}
+			}
+		}
+	}
+
 	td {
 		background-color: #EEE;
 	}
