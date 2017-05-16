@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="fragments :: head(Provas)" />
+
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <img class="cabecalho-logo" src="img/logo.png"
+           alt="Logo da Gincana IFSul"/>
+
+      <section class="cabecalho-informacoes">
+        <div class="cabecalho-informacoes-localizacao">
+          Av. Copacabana, 100 - Piratini, Sapucaia do Sul - RS, 93216-120
+        </div>
+
+        <div class="cabecalho-informacoes-telefone">(51) 3452-9200</div>
+
+        <nav class="cabecalho-informacoes-redes-sociais">
+          <ul>
+            <li class="cabecalho-informacoes-redes-sociais-icones facebook">
+              <a href="#">Facebook</a>
+            </li>
+            <li class="cabecalho-informacoes-redes-sociais-icones twitter">
+              <a href="#">Twitter</a>
+            </li>
+            <li class="cabecalho-informacoes-redes-sociais-icones instagram">
+              <a href="#">Instagram</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <aside class="cabecalho-perfil">
+      </aside>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div class="container">
+      <section class="conteudo-provas">
+        <h1 class="conteudo-provas-titulo">Provas</h1>
+        <table class="conteudo-provas-tabela">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Descrição</th>
+              <th>Divulgação</th>
+              <th>Local</th>
+              <th>N° participantes</th>
+              <th>Peso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="prova,i: ${provas}">
+              <th th:text="${i.index+1}"></th>
+              <td th:text="${prova.descricao}"></td>
+              <td th:text="${prova.divulgacao}"></td>
+              <td th:text="${prova.local}"></td>
+              <td th:text="${prova.numeroParticipantes}"></td>
+              <td th:text="${prova.peso}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section class="conteudo-pontuar">
+        <form class="conteudo-pontuar-form" th:action="@{/provas/pontuar}" th:object="${proposta}" method="POST">
+          <h1>Pontuar</h1>
+            <table class="conteudo-pontuar-form-tabela">
+              <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Pontuação</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="equipe : ${equipes}">
+                <td th:text="${equipe.nome}"></td>
+                <td>
+                  <input class="conteudo-pontuar-form-tabela-input" type="number" min="0" max="10"/>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+            <button class="conteudo-pontuar-form-submit"
+                    type="submit">Pontuar</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <th:block th:include="fragments :: footer" />
+</body>
+
+</html>
