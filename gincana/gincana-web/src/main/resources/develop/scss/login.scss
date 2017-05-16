@@ -5,6 +5,10 @@ body {
 	line-height: 1.5;
 }
 
+textarea:focus, input:focus{
+	outline: none;
+}
+
 h1,
 h2,
 .cabecalho-informacoes {
