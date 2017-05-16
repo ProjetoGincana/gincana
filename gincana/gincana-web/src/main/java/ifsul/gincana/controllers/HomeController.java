@@ -38,7 +38,7 @@ public class HomeController {
         // equipes e pontuacoes
         List<Entry<Equipe, Double>> equipesRanqueadas = new ArrayList<>();
 
-        for (Equipe equipe : equipeService.findAllEquipes()) {
+        for (Equipe equipe : equipeService.findAll()) {
             Double pontuacao = equipeService.getPontuacao(equipe);
 
             equipesRanqueadas.add(new AbstractMap.SimpleEntry<>(equipe, pontuacao));
