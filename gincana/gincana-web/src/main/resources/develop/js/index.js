@@ -11,6 +11,10 @@ const routes = [
     {
         module: "home",
         paths: "/"
+    },
+    {
+      module: "provas",
+      paths: "/provas"
     }
 ];
 
