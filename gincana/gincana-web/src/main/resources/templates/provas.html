@@ -52,8 +52,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr th:each="prova,i: ${provas}">
-              <th th:text="${i.index+1}"></th>
+            <tr th:each="prova: ${provas}">
+              <th th:text="${prova.id}"></th>
               <td th:text="${prova.descricao}"></td>
               <td th:text="${prova.divulgacao}"></td>
               <td th:text="${prova.local}"></td>
