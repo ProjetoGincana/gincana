@@ -1,5 +1,22 @@
 @import "utils/variables.scss";
 
+.conteudo-provas {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conteudo-pontuar-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-pontuar-form-tabela{
+  margin: 1em 0;
+}
+
+.conteudo-pontuar-form-tabela,
 .conteudo-provas-tabela {
   border-collapse: separate;
   border-spacing: .15em;
@@ -35,21 +52,9 @@
 
   tbody {
     tr {
-      &:nth-child(1){
-        th {
-          background-color: #daa520;
+      th {
+          background-color: #565656;
         }
-      }
-      &:nth-child(2){
-        th {
-          background-color: #9c9db7;
-        }
-      }
-      &:nth-child(3){
-        th {
-          background-color: #cd7f32;
-        }
-      }
     }
   }
 
