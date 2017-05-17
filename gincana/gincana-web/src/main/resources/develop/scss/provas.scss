@@ -55,6 +55,13 @@
       th {
           background-color: #565656;
         }
+      
+      &.selected {
+        td {
+          background-color: #acbdf1;
+          transition: all 2s;
+        }
+      }
     }
   }
 
