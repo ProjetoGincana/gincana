@@ -5,6 +5,8 @@ gincana/node_modules/
 */mvnw
 */.mvn/
 
+*.log
+
 ### STS ###
 .apt_generated
 .classpath
