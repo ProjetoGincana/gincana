@@ -1,11 +1,16 @@
 @import "utils/variables.scss";
 
 .conteudo-equipes {
-	width: 40%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
+}
+
+.tabela-wrapper {
+	overflow-x: auto;
+	display: flex;
+	justify-content: center;
 }
 
 .conteudo-equipes-titulo {
@@ -16,7 +21,6 @@
 	border-collapse: separate;
 	border-spacing: .25em;
 	margin: 1em 0;
-	width: 90%;
 
 	[colspan] {
 		text-align: center;
@@ -70,13 +74,12 @@
 	}
 }
 
-.conteudo-provas {
-	width: 40%;
-}
-
-
 @media(max-width: 1024px) {
-	.conteudo-equipes {
-		width: 100%;
+	.conteudo {
+		.conteudo-provas,
+		.conteudo-equipes {
+			display: block;
+			width: 100%;
+		}
 	}
 }
