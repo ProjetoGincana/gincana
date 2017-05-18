@@ -40,28 +40,30 @@
     <div class="container">
       <section class="conteudo-provas">
         <h1 class="conteudo-provas-titulo">Provas</h1>
-        <table class="conteudo-provas-tabela">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Descrição</th>
-              <th>Divulgação</th>
-              <th>Local</th>
-              <th>N°&nbsp;Participantes</th>
-              <th>Peso</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="prova: ${provas}">
-              <th th:text="${prova.id}"></th>
-              <td th:text="${prova.descricao}"></td>
-              <td th:text="${prova.divulgacao}"></td>
-              <td th:text="${prova.local}"></td>
-              <td th:text="${prova.numeroParticipantes}"></td>
-              <td th:text="${prova.peso}"></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="tabela-wrapper">
+          <table class="conteudo-provas-tabela">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Descrição</th>
+                <th>Divulgação</th>
+                <th>Local</th>
+                <th>N°&nbsp;Participantes</th>
+                <th>Peso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="prova: ${provas}">
+                <th th:text="${prova.id}"></th>
+                <td th:text="${prova.descricao}"></td>
+                <td th:text="${prova.divulgacao}"></td>
+                <td th:text="${prova.local}"></td>
+                <td th:text="${prova.numeroParticipantes}"></td>
+                <td th:text="${prova.peso}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       
       <section class="conteudo-pontuar">

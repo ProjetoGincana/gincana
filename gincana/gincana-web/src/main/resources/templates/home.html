@@ -46,33 +46,52 @@
     <section class="container">
       <section class="conteudo-equipes">
         <h1 class="conteudo-equipes-titulo">Ranking das Equipes</h1>
-        <table class="conteudo-equipes-tabela">
-          <thead>
-            <tr>
-              <th>Posição</th>
-              <th>Nome Equipe</th>
-              <th>Pontuação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="equipePontuada,i: ${equipesRanqueadas}">
-              <th th:text="${i.index+1}"></th>
-              <td th:text="${equipePontuada.key.nome}"></td>
-              <td th:text="${equipePontuada.value}"></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="tabela-wrapper">
+          <table class="conteudo-equipes-tabela">
+            <thead>
+              <tr>
+                <th>Posição</th>
+                <th>Nome Equipe</th>
+                <th>Pontuação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="equipePontuada,i: ${equipesRanqueadas}">
+                <th th:text="${i.index+1}"></th>
+                <td th:text="${equipePontuada.key.nome}"></td>
+                <td th:text="${equipePontuada.value}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       
       <section class="conteudo-provas">
-        <h1>Provas</h1>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.</span> <br />
+        <h1 class="conteudo-provas-titulo">Provas</h1>
+        <div class="tabela-wrapper">
+          <table class="conteudo-provas-tabela">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Descrição</th>
+                <th>Divulgação</th>
+                <th>Local</th>
+                <th>N°&nbsp;Participantes</th>
+                <th>Peso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="prova: ${provas}">
+                <th th:text="${prova.id}"></th>
+                <td th:text="${prova.descricao}"></td>
+                <td th:text="${prova.divulgacao}"></td>
+                <td th:text="${prova.local}"></td>
+                <td th:text="${prova.numeroParticipantes}"></td>
+                <td th:text="${prova.peso}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </section>
   </main>
