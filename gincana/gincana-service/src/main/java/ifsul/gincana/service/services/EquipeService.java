@@ -6,9 +6,7 @@
 package ifsul.gincana.service.services;
 
 import ifsul.gincana.entity.entities.Equipe;
-import ifsul.gincana.entity.entities.Prova;
 import ifsul.gincana.service.repositories.EquipeRepository;
-import ifsul.gincana.service.repositories.ProvaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +22,7 @@ public class EquipeService {
     @Autowired
     EquipeRepository repository;
 
-    public Double getPontuacao(Equipe equipe){
+    public Integer getPontuacao(Equipe equipe){
         return repository.getPontuacao(equipe);
     }
 
