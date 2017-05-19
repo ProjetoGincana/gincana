@@ -38,7 +38,7 @@ public class ProvaController {
     @RequestMapping(value = "/provas", method = RequestMethod.GET)
     public String provas(Model model, Pageable pgbl) {
         Usuario usuario = usuarioUtil.getUsuario();
-        Page<Prova> provas = provaService.findAll(pgbl);
+        Page<Prova> provas = provaService.findAllNotScored(pgbl);
         Page<Equipe> equipes = equipeService.findAll(pgbl);
 
         model.addAttribute("usuario", usuario);
