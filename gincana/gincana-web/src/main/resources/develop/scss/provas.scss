@@ -12,15 +12,12 @@
     align-items: center;
 }
 
-.conteudo-pontuar-form-tabela{
-  margin: 1em 0;
-}
-
 .conteudo-pontuar-form-tabela,
 .conteudo-provas-tabela {
   border-collapse: separate;
   border-spacing: .15em;
   width: 100%;
+  margin-top: 1em;
 
   [colspan] {
     text-align: center;
