@@ -4,7 +4,7 @@
 
 require('../../scss/provas.scss');
 
-const opcoes = $(".conteudo-provas-tabela tr");
+const opcoes = $(".conteudo-provas-tabela tbody tr");
 const campoEquipe = $(".conteudo-pontuar-form-prova");
 const camposNota = $(".conteudo-pontuar-form-tabela-input");
 
