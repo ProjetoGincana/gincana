@@ -52,8 +52,8 @@ public class Prova implements Serializable {
 
     @NotNull
     @Basic(optional = false)
-    @Column(name = "peso_prova")
-    private int peso;
+    @Column(name = "valor_total_prova")
+    private int valorTotal;
 
     @OneToMany(mappedBy = "prova", cascade = ALL)
     private List<Nota> notas;
@@ -113,12 +113,12 @@ public class Prova implements Serializable {
         this.descricao = descricao;
     }
 
-    public int getPeso() {
-        return peso;
+    public int getValorTotal() {
+        return valorTotal;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setValorTotal(int valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public List<Nota> getNotas() {
