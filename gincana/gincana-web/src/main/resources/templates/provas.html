@@ -59,7 +59,7 @@
                 <td th:text="${prova.divulgacao}"></td>
                 <td th:text="${prova.local}"></td>
                 <td th:text="${prova.numeroParticipantes}"></td>
-                <td th:text="${prova.valorTotal}"></td>
+                <td class="valor-total" th:text="${prova.valorTotal}"></td>
               </tr>
             </tbody>
           </table>
@@ -80,7 +80,7 @@
               <tr th:each="equipe : ${equipes}">
                 <td th:text="${equipe.nome}"></td>
                 <td>
-                  <input class="conteudo-pontuar-form-tabela-input" type="number" min="0" max="10"/>
+                  <input class="conteudo-pontuar-form-tabela-input" type="number" min="0" max="1000" required="true" />
                 </td>
               </tr>
               </tbody>
