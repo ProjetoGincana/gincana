@@ -28,4 +28,8 @@ public class ProvaService {
     public Page<Prova> findAll(Pageable pgbl) {
         return repository.findAll(pgbl);
     }
+    
+    public Page<Prova> findAllNotScored(Pageable pgbl) {
+        return repository.findAllNotScored(pgbl);
+    }
 }
