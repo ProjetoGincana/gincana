@@ -64,6 +64,19 @@ public class Prova implements Serializable {
     @ManyToOne(cascade = ALL)
     @JoinColumn(name = "id_edicao")
     private Edicao edicao;
+    
+    @NotNull
+    @Basic(optional = false)
+    @Column(name = "pontuada")
+    private Boolean pontuada;
+
+    public Boolean getPontuada() {
+        return pontuada;
+    }
+
+    public void setPontuada(Boolean pontuada) {
+        this.pontuada = pontuada;
+    }
 
     public Long getId() {
         return id;
