@@ -41,18 +41,18 @@ public class HomeController {
     public String home(Model model, Principal principal, Pageable pgbl){
         
         // equipes e pontuacoes
-        List<Entry<Equipe, Double>> equipesRanqueadas = new ArrayList<>();
+        List<Entry<Equipe, Integer>> equipesRanqueadas = new ArrayList<>();
         Page<Prova> provas = provaService.findAll(pgbl);
 
         for (Equipe equipe : equipeService.findAll()) {
-            Double pontuacao = equipeService.getPontuacao(equipe);
+            Integer pontuacao = equipeService.getPontuacao(equipe);
 
             equipesRanqueadas.add(new AbstractMap.SimpleEntry<>(equipe, pontuacao));
         }
         
         // ordenar por pontuacao
-        equipesRanqueadas.sort((Entry<Equipe, Double> a, Entry<Equipe, Double> b) ->
-                (int) (b.getValue() - a.getValue()));
+        equipesRanqueadas.sort((Entry<Equipe, Integer> a, Entry<Equipe, Integer> b) ->
+                b.getValue() - a.getValue());
 
         Usuario usuario = usuarioService.findByEmail(principal.getName());
         
