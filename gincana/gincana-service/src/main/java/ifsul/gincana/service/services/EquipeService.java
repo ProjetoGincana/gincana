@@ -1,6 +1,7 @@
 package ifsul.gincana.service.services;
 
 import ifsul.gincana.entity.entities.Equipe;
+import ifsul.gincana.entity.entities.Prova;
 import ifsul.gincana.service.repositories.EquipeRepository;
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -40,6 +41,21 @@ public class EquipeService {
 
         for (Equipe equipe : repository.findAll()) {
             Integer pontuacao = repository.getPontuacao(equipe);
+
+            equipesRanqueadas.add(new AbstractMap.SimpleEntry<>(equipe, pontuacao));
+        }
+        
+        ordenarEquipesPorPontuacao(equipesRanqueadas);
+
+        return equipesRanqueadas;
+    }
+    
+    public List<Entry<Equipe, Integer>> getEquipesRanqueadas(Prova prova){
+        // equipes e pontuacoes
+        List<Entry<Equipe, Integer>> equipesRanqueadas = new ArrayList<>();
+
+        for (Equipe equipe : repository.findAll()) {
+            Integer pontuacao = repository.getPontuacao(equipe, prova);
 
             equipesRanqueadas.add(new AbstractMap.SimpleEntry<>(equipe, pontuacao));
         }

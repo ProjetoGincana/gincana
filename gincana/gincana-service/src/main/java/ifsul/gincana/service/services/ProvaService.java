@@ -28,6 +28,10 @@ public class ProvaService {
         return repository.save(nota);
     }
     
+    public Prova findOne(Long id){
+        return repository.findOne(id);
+    }
+    
     public Iterable<Prova> findAll(){
         return repository.findAll();
     }

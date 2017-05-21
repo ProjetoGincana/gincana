@@ -6,7 +6,7 @@
 <body>
   <header class="cabecalho">
     <div class="container">
-      <img class="cabecalho-logo" src="img/logo.png"
+      <img class="cabecalho-logo" th:src="@{/img/logo.png}"
            alt="Logo da Gincana IFSul"/>
 
       <section class="cabecalho-informacoes">
@@ -67,7 +67,8 @@
       </section>
       
       <section class="conteudo-pontuar">
-        <form class="conteudo-pontuar-form" th:action="@{/provas/pontuar}" th:object="${pontuarEquipe}" method="POST">
+        <form class="conteudo-pontuar-form" th:action="@{/provas/pontuar}"
+          th:object="${pontuarEquipe}" method="POST">
           <h1>Pontuar Equipes</h1>
             <table class="conteudo-pontuar-form-tabela">
               <thead>
@@ -80,8 +81,10 @@
               <tr th:each="equipe : ${equipes}">
                 <td th:text="${equipe.nome}"></td>
                 <td>
-                  <input class="conteudo-pontuar-form-tabela-input" type="number" min="0" max="1000" required="true" th:field="*{pontuacoes}"/>
-                  <input class="conteudo-pontuar-form-tabela-equipeid" type="hidden" name="equipes" th:value="${equipe.id}"/>
+                  <input class="conteudo-pontuar-form-tabela-input" type="number" min="0"
+                    max="1000" required="true" th:field="*{pontuacoes}"/>
+                  <input class="conteudo-pontuar-form-tabela-equipeid" type="hidden"
+                    name="equipes" th:value="${equipe.id}"/>
                 </td>
               </tr>
               </tbody>

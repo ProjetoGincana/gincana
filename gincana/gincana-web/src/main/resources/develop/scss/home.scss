@@ -21,6 +21,20 @@
 	text-align: center;
 }
 
+.conteudo-provas-tabela {
+	tbody {
+		tr{
+			&:hover{
+				cursor: pointer;
+				td {
+					transition: all 1s;
+					background-color: #c9c2e2;
+				}
+			}
+		}
+	}
+}
+
 .conteudo-equipes-tabela {
 	border-collapse: separate;
 	border-spacing: .25em;

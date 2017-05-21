@@ -14,7 +14,7 @@ const routes = [
     },
     {
       module: "provas",
-      paths: "/provas"
+      paths: "/comissao/provas"
     }
 ];
 
