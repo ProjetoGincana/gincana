@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
-import java.util.AbstractMap;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map.Entry;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import static java.util.Map.Entry;
 
 /**
  * @author Marcelo Henrique
@@ -40,21 +39,9 @@ public class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model, Principal principal, Pageable pgbl){
         
-        // equipes e pontuacoes
-        List<Entry<Equipe, Integer>> equipesRanqueadas = new ArrayList<>();
         Page<Prova> provas = provaService.findAll(pgbl);
-
-        for (Equipe equipe : equipeService.findAll()) {
-            Integer pontuacao = equipeService.getPontuacao(equipe);
-
-            equipesRanqueadas.add(new AbstractMap.SimpleEntry<>(equipe, pontuacao));
-        }
-        
-        // ordenar por pontuacao
-        equipesRanqueadas.sort((Entry<Equipe, Integer> a, Entry<Equipe, Integer> b) ->
-                b.getValue() - a.getValue());
-
         Usuario usuario = usuarioService.findByEmail(principal.getName());
+        List<Entry<Equipe, Integer>> equipesRanqueadas = equipeService.getEquipesRanqueadas();
         
         model.addAttribute("usuario", usuario);
         model.addAttribute("equipe", usuario.getEquipe());
