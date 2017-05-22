@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import static java.util.Map.Entry;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -75,8 +76,8 @@ public class ProvaController {
     }
     
     @PostMapping("/provas/pontuar")
-    public String pontuarEquipes(BindingResult result,
-            @Valid @ModelAttribute PontuarEquipe pontuarEquipe){
+    public String pontuarEquipes(@Valid @ModelAttribute PontuarEquipe pontuarEquipe,
+            BindingResult result){
         
         if (!result.hasErrors()){
             provaService.pontuarEquipes(pontuarEquipe);
