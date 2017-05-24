@@ -1,7 +1,7 @@
 package ifsul.gincana.security.service;
 
 import ifsul.gincana.entity.entities.Usuario;
-import ifsul.gincana.security.enumerations.Permissoes;
+import ifsul.gincana.entity.enumerations.Permissoes;
 import ifsul.gincana.service.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
