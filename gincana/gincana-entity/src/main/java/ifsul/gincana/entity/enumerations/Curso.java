@@ -7,7 +7,9 @@ public enum Curso {
 
     EVENQ("Eventos"),
     INFQ("Informática"),
-    PLAQ("Plásticos");
+    PLAQ("Plásticos"),
+    ENG("Engenharia Mecânica"),
+    ADM("Administração");
 
     private final String nomeDeExibicao;
 
