@@ -2,6 +2,7 @@ package ifsul.gincana.entity.entities;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import ifsul.gincana.entity.enumerations.Curso;
+import ifsul.gincana.entity.enumerations.Permissoes;
 import ifsul.gincana.entity.enumerations.Tipo;
 import java.io.Serializable;
 import java.util.Date;
@@ -63,12 +64,25 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "lider_usuario")
     private boolean lider;
+    
+    @NotNull()
+    @Basic(optional = false)
+    @Column(name = "vice_lider_usuario")
+    private boolean viceLider;
 
+    @Basic(optional = true)
+    @Column(name = "ano_usuario")
+    private String ano;
+    
     @NotNull
     @Basic(optional = false)
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_usuario")
     private Tipo identificacao;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "permissao_usuario")
+    private Permissoes permissao;
 
     @OneToMany(mappedBy = "usuario", cascade = ALL)
     private List<Atividade> atividades;
@@ -120,6 +134,30 @@ public class Usuario implements Serializable {
         this.curso = curso;
     }
 
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public Permissoes getPermissao() {
+        return permissao;
+    }
+
+    public void setPermissao(Permissoes permissao) {
+        this.permissao = permissao;
+    }
+
+    public boolean isViceLider() {
+        return viceLider;
+    }
+
+    public void setViceLider(boolean viceLider) {
+        this.viceLider = viceLider;
+    }
+    
     public String getTurma() {
         return turma;
     }
