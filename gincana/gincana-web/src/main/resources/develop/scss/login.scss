@@ -38,27 +38,21 @@
 	padding: 10px;
 }
 
-.cabecalho-login-form-submit {
-	margin-left: 1%;
-	margin-top: 1%;
-}
-
-.cabecalho-login-form-input,
-.cabecalho-login-form-submit,
-.cabecalho-login-visitante-submit {
-	width: 100%;
+.cabecalho-login-form-input:focus {
+	border: 1px solid lightskyblue;
+	transition: border;
+	transition-duration: 1s;
 }
 
 .cabecalho-login-visitante h1 {
 	flex-grow: 1;
 }
 
-
 .cabecalho-login-form-submit,
 .cabecalho-login-visitante-submit,
 .conteudo-cadastro-form-submit {
-	margin-top: 2%;
-	display: inline-block;
+	margin: 0 auto;
+	margin-top: 1em;
 	height: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
@@ -83,11 +77,6 @@
 	flex-grow: 3;
 }
 
-.conteudo-cadastro-form-submit {
-	margin-left: 1%;
-	margin-top: 1%;
-}
-
 .conteudo-cadastro-form-input,
 .conteudo-cadastro-form-submit {
 	width: 60%;
@@ -96,6 +85,7 @@
 input {
 	background-color: transparent;
 	border: none;
+	border: 1px solid transparent;	
 	border-bottom: 1px solid #000;
 }
 
