@@ -47,6 +47,7 @@ public class ProvaController {
         this.usuarioUtil = usuarioUtil;
     }
 
+    @PreAuthorize("hasAuthority('TECNICA')")
     @RequestMapping(value = "/comissao/provas", method = RequestMethod.GET)
     public String comissaoProvas(Model model, Pageable pgbl) {
         Usuario usuario = usuarioUtil.getUsuario();
