@@ -17,7 +17,7 @@
       <img class="cabecalho-logo" src="/img/logo.png"
           alt="Logo da Gincana IFSul"/>
 
-      <aside sec:authorize="isAuthenticated()" class="cabecalho-perfil">
+      <aside sec:authorize="hasAuthority('MEMBRO')" class="cabecalho-perfil">
         <img class="cabecalho-perfil-foto" th:src="'/'+${equipe.urlFoto}"
           alt="Imagem da Equipe"/>
         <div th:text="${equipe.nome}" ></div>
