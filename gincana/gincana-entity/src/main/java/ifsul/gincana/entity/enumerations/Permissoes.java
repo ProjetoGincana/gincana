@@ -14,6 +14,7 @@ public enum Permissoes implements GrantedAuthority {
     FINANCEIRA("Financeiro"),
     GERAL("Geral"),
     LOGISTICA("Logística"),
+    MEMBRO("Membro"),
     TECNICA("Técnica");
 
     private final String nomeDeExibicao;
