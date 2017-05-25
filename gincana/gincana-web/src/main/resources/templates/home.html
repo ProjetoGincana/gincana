@@ -4,42 +4,8 @@
 <th:block th:replace="fragments :: head(Home)" />
 
 <body>
-  <header class="cabecalho">
-    <div class="container">
-      <img class="cabecalho-logo" src="img/logo.png"
-          alt="Logo da Gincana IFSul"/>
-
-      <section class="cabecalho-informacoes">
-        <div class="cabecalho-informacoes-localizacao">
-          Av. Copacabana, 100 - Piratini, Sapucaia do Sul - RS, 93216-120
-        </div>
-
-        <div class="cabecalho-informacoes-telefone">(51) 3452-9200</div>
-
-        <nav class="cabecalho-informacoes-redes-sociais">
-          <ul>
-            <li class="cabecalho-informacoes-redes-sociais-icones facebook">
-              <a href="#">Facebook</a>
-            </li>
-            <li class="cabecalho-informacoes-redes-sociais-icones twitter">
-              <a href="#">Twitter</a>
-            </li>
-            <li class="cabecalho-informacoes-redes-sociais-icones instagram">
-              <a href="#">Instagram</a>
-            </li>
-          </ul>
-        </nav>
-      </section>
-
-      <aside class="cabecalho-perfil">
-        <img class="cabecalho-perfil-foto" th:src="${equipe.urlFoto}"
-          alt="Imagem da Equipe"/>
-        <div th:text="${equipe.nome}" ></div>
-        <div th:text="${usuario.nome}" ></div>
-      </aside>
-    </div>
-  </header>
-
+  
+  <th:block th:replace="fragments :: header" />
   <a th:href="@{/logout}">Logout</a>
 
   <main class="conteudo">
@@ -96,7 +62,7 @@
     </section>
   </main>
 
-  <th:block th:include="fragments :: footer" />
+  <th:block th:replace="fragments :: footer" />
 </body>
 
 </html>

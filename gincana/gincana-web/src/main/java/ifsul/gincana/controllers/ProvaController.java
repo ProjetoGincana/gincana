@@ -69,6 +69,7 @@ public class ProvaController {
                 equipeService.getEquipesRanqueadas(prova);
 
         model.addAttribute("usuario", usuario);
+        model.addAttribute("equipe", usuario.getEquipe());
         model.addAttribute("equipesRanqueadas", equipesRanqueadas);
         model.addAttribute("prova", prova);
         
