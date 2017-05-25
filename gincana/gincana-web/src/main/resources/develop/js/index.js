@@ -2,6 +2,7 @@
  * @author Marcelo Henrique
  */
 import Router from "./router/router"
+require('../scss/general.scss');
 
 const routes = [
     {
