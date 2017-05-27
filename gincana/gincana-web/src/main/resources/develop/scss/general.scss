@@ -1,6 +1,13 @@
 @import "utils/variables.scss";
 
+html {
+	height: 100%;
+}
+
 body {
+	position: relative;
+	padding-bottom: 10em;
+	min-height: 100%;
 	font-size: 110%;
 	background-color: #FFF;
 	font-family: 'Raleway', Arial, sans-serif;
@@ -92,6 +99,9 @@ h2,
 
 footer {
   background-color: $main-color;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 .footer-informacoes {
