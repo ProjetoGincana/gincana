@@ -66,6 +66,22 @@ input {
 	font-size: 0.98em;
 }
 
+.form-container--erro {
+	margin: 10px;
+	border: 1px dashed #cc5151;
+	border-radius: 10px;
+	padding: .5em;
+	background-color: #ffeaea;
+}
+
+.form-input-erro + label {
+	color: red;
+}
+
+.form-input-erro {
+	border-bottom-color: red;
+}
+
 .form-container {
 	position: relative;
 	padding: 10px;

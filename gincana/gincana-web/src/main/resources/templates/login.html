@@ -11,7 +11,7 @@
           alt="Logo da Gincana IFSul"/>
 
       <aside class="cabecalho-login">
-        <form class="cabecalho-login-form" action="/login" method="POST">
+        <form id="login-form" class="cabecalho-login-form" action="/login" method="POST">
           <fieldset class="cabecalho-login-form-fieldset">
             <legend class="cabecalho-login-form-legend--header">Login</legend>
             <div class="form-container">
@@ -73,7 +73,8 @@
       <div class="conteudo-linha"></div>
 
       <aside class="cadastro">
-        <form class="cadastro-form" action="#">
+        <form class="cadastro-form" 
+          action="/cadastro" method="post" th:object="${usuario}">
           
           <fieldset class="cadastro-form-fieldset">
             <legend class="cadastro-form-fieldset-legend--header">Cadastro</legend>
@@ -81,28 +82,28 @@
               <label for="email" class="cadastro-form-label">
                 E-mail</label>
               <input id="email" class="cadastro-form-input email"
-                    type="email" required="true"/>
+                    th:errorclass="form-input-erro" type="email" required="true" th:field="*{email}"/>
             </div>
           
             <div class="form-container">
               <label for="senha" class="cadastro-form-label">
                 Senha</label>
               <input id="senha" class="cadastro-form-input senha"
-                      type="password" name="senha-usuario" required="true"/>
+                    th:errorclass="form-input-erro" type="password" th:field="*{senha}"/>
             </div>
 
             <div class="form-container">
               <label for="matricula" class="cadastro-form-label">
                 Matrícula ou Siape</label>
               <input id="matricula" class="cadastro-form-input matricula"
-                  type="text" name="matricula-usuario"  required="true"/>
+                  th:errorclass="form-input-erro" type="text" required="true" th:field="*{identificacao}"/>
             </div>
 
             <div class="form-container">
               <label for="data-nascimento" class="cadastro-form-label">
                 Data de Nascimento</label>
               <input id="data-nascimento" class="cadastro-form-input nascimento"
-                  type="date" name="nascimento-usuario" required="true"/>
+                  th:errorclass="form-input-erro" type="date" required="true" th:field="*{nascimento}"/>
             </div>
             <fieldset class="cadastro-form-fieldset--radio">
               <legend class="cadastro-form-fieldset-legend">
@@ -110,19 +111,27 @@
               </legend>
               <div class="form-container-radio">
                 <div>
-                  <input id="aluno" name="tipo" type="radio" />
+                  <input id="aluno" name="tipo" type="radio"
+                    th:field="*{tipo}" th:value="ALUNO"/>
                   <label for="aluno">Aluno</label>
                 </div>
                 <div>
-                  <input id="prof" name="tipo" type="radio"/>
+                  <input id="prof" name="tipo" type="radio"
+                    th:field="*{tipo}" th:value="PROFESSOR"/>
                   <label for="prof">Professor</label>
                 </div>
                 <div>
-                  <input id="ta" name="tipo" type="radio" /> 
+                  <input id="ta" name="tipo" type="radio" 
+                    th:field="*{tipo}" th:value="TA"/> 
                   <label for="ta">Técnico Administrativo</label>
                 </div>
               </div>
             </fieldset>
+            <div class="form-container--erro" th:if="${#fields.hasErrors('*')}">
+              <ul>
+                <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+              </ul>
+            </div>
             <div class="form-container">
                 <button class="cadastro-form-submit"
                       type="submit">Cadastrar</button>
