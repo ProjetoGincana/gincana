@@ -27,20 +27,16 @@ public class Inscricao implements Serializable {
     @Column(name = "envio_inscricao")
     private Date envio;
 
-    @NotNull()
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(value = TemporalType.DATE)
-    @Basic(optional = false)
     @Column(name = "resposta_inscricao")
     private Date resposta;
 
-    @NotNull()
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "status_inscricao")
     private boolean status;
 
-    @NotNull()
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "parecer_inscricao")
     private String parecer;
 

@@ -27,15 +27,13 @@ public class Recurso implements Serializable {
     @Column(name = "envio_recurso")
     private Date envio;
 
-    @NotNull()
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(value = TemporalType.DATE)
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "resposta_recurso")
     private Date resposta;
 
-    @NotNull()
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "status_recurso")
     private boolean status;
 
@@ -44,8 +42,7 @@ public class Recurso implements Serializable {
     @Column(name = "conteudo_recurso")
     private String conteudo;
 
-    @NotNull()
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "parecer_recurso")
     private String parecer;
 

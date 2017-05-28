@@ -34,8 +34,7 @@ public class Usuario implements Serializable {
     @Column(name = "email_usuario", unique = true)
     private String email;
 
-    @NotNull
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "senha_usuario")
     private String senha;
 
@@ -48,10 +47,9 @@ public class Usuario implements Serializable {
     @Column(name = "turma_usuario")
     private String turma;
 
-    @NotNull()
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(value = TemporalType.DATE)
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "nascimento_usuario")
     private Date nascimento;
 
@@ -78,7 +76,12 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_usuario")
-    private Tipo identificacao;
+    private Tipo tipo;
+    
+    @NotNull
+    @Basic(optional = false)
+    @Column(name = "identificacao_usuario")
+    private String identificacao;
     
     @Enumerated(EnumType.STRING)
     @Column(name = "permissao_usuario")
@@ -190,12 +193,12 @@ public class Usuario implements Serializable {
         this.lider = lider;
     }
 
-    public Tipo getIdentificacao() {
-        return identificacao;
+    public Tipo getTipo() {
+        return tipo;
     }
 
-    public void setIdentificacao(Tipo identificacao) {
-        this.identificacao = identificacao;
+    public void setTipo(Tipo identificacao) {
+        this.tipo = identificacao;
     }
 
     public List<Atividade> getAtividades() {
@@ -222,4 +225,11 @@ public class Usuario implements Serializable {
         this.equipe = equipe;
     }
 
+    public String getIdentificacao() {
+        return identificacao;
+    }
+
+    public void setIdentificacao(String identificacao) {
+        this.identificacao = identificacao;
+    }
 }
