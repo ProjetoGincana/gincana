@@ -5,6 +5,7 @@ import ifsul.gincana.service.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
 
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+    
     @Autowired
     UsuarioRepository repository;
 
@@ -38,5 +42,11 @@ public class UsuarioService {
 
     public Usuario findByEmail(String email) {
         return repository.findByEmail(email);
+    }
+    
+    public void cadastrar(Usuario usuario){
+        usuario.setStatus(true);
+        usuario.setSenha( encoder.encode(usuario.getSenha()) );
+        repository.save(usuario);
     }
 }
