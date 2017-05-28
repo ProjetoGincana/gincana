@@ -16,7 +16,11 @@ const routes = [
     {
       module: "provas",
       paths: "/comissao/provas"
-    }
+    },
+    {
+        module: "login",
+        paths: "/cadastro"
+    },
 ];
 
 // Set true se deseja log

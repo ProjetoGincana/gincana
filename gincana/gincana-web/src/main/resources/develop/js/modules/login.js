@@ -5,8 +5,9 @@
 require('../../scss/login.scss');
 
 $(window).on('load', () => {
+    $(".form-input-erro").parent(".form-container").css("color", "red");
 
-    $("form").on("submit", e => {
+    $("#login-form").on("submit", e => {
 
         const email = $("input.email");
         const pass = $("input.senha");
