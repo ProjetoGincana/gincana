@@ -2,6 +2,7 @@ package ifsul.gincana.security.configuration;
 
 import ifsul.gincana.security.service.GincanaUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -20,12 +21,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     GincanaUserDetailsService userDetailsService;
+    
+    @Bean
+    public BCryptPasswordEncoder getbCryptPasswordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 
     @Override
     protected void configure(final HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.authorizeRequests()
-                .antMatchers("/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
+                .antMatchers("/css/**", "/js/**", "/img/**", "/favicon.ico", "/cadastro").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/", true)
                     .failureUrl("/login?error").permitAll()
