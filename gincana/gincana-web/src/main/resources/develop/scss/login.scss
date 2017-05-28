@@ -1,4 +1,11 @@
 
+input {
+	background-color: transparent;
+	border: none;
+	border: 1px solid transparent;	
+	border-bottom: 1px solid #000;
+}
+
 .cabecalho-login {
 	display: flex;
 }
@@ -23,19 +30,49 @@
 }
 
 .cabecalho-login-form-fieldset,
-.conteudo-cadastro-form-fieldset {
+.cadastro-form-fieldset {
 	border: 0;
 }
 
-.cabecalho-login-form-legend,
-.conteudo-cadastro-form-legend {
-	font-weight: bold;
-	display: block;
+.cadastro-form-fieldset--radio {
+	border: 0;
+	margin-left: 8%;
+	text-align: left;
 }
 
+.cabecalho-login-form-legend--header,
+.cadastro-form-fieldset-legend--header {
+	font-size: 2em;
+	font-weight: bold;
+}
+.cadastro-form-fieldset-legend {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+
 .cabecalho-login-form-input,
-.conteudo-cadastro-form-input {
+.cadastro-form-input {
+	display: block;
+	padding: 7px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.cadastro-form-label {
+	position: absolute;
+	top: -0.2em;
+	left: 10%;
+	font-size: 0.98em;
+}
+
+.form-container {
+	position: relative;
 	padding: 10px;
+}
+
+.form-container-radio {
+	margin-top: 0;
 }
 
 .cabecalho-login-form-input:focus {
@@ -50,12 +87,11 @@
 
 .cabecalho-login-form-submit,
 .cabecalho-login-visitante-submit,
-.conteudo-cadastro-form-submit {
+.cadastro-form-submit {
+	display: block;
+	text-align: center;
 	margin: 0 auto;
-	margin-top: 1em;
-	height: 3em;
-	padding-right: 1em;
-	padding-left: 1em;
+	height: 2em;
 	background-color: transparent;
 	text-transform: uppercase;
 	border-radius: 5px;
@@ -70,23 +106,15 @@
 	width: 35%;
 }
 
-.conteudo-cadastro {
+.cadastro {
 	width: 35%;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 3;
 }
 
-.conteudo-cadastro-form-input,
-.conteudo-cadastro-form-submit {
-	width: 60%;
-}
-
-input {
-	background-color: transparent;
-	border: none;
-	border: 1px solid transparent;	
-	border-bottom: 1px solid #000;
+.cadastro-form-submit {
+	width: 70%;
 }
 
 @media(max-width: 1014px){
@@ -95,7 +123,7 @@ input {
 		text-align: justify;
 	}
 
-	.conteudo-cadastro {
+	.cadastro {
 		width: 100%;
 		order: -1;
 		margin-bottom: 2em;

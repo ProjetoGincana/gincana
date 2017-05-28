@@ -13,19 +13,22 @@
       <aside class="cabecalho-login">
         <form class="cabecalho-login-form" action="/login" method="POST">
           <fieldset class="cabecalho-login-form-fieldset">
-            <legend class="cabecalho-login-form-legend">Login</legend>
-            <div>
+            <legend class="cabecalho-login-form-legend--header">Login</legend>
+            <div class="form-container">
               <input class="cabecalho-login-form-input email"
                     type="email" name="username" placeholder="Email"
                     required="true" autofocus="true"/>
             </div>
-            <div>
+            
+            <div class="form-container">
               <input class="cabecalho-login-form-input senha"
                     type="password" name="password" placeholder="Senha"
                     required="true"/>
             </div>
-            <button class="cabecalho-login-form-submit"
+            <div class="form-container">
+              <button class="cabecalho-login-form-submit"
                   type="submit">Entrar</button>
+            </div>
           </fieldset>
         </form>
 
@@ -69,46 +72,62 @@
 
       <div class="conteudo-linha"></div>
 
-      <aside class="conteudo-cadastro">
-        <h1 class="conteudo-cadastro-titulo">Cadastro</h1>
-        <form class="conteudo-cadastro-form" action="#">
-          <fieldset class="conteudo-cadastro-form-fieldset">
-            <legend class="conteudo-cadastro-form-legend"
-                    for="email-usuario">Email</legend>
-            <div>
-              <input class="conteudo-cadastro-form-input email"
-                    type="email" name="email-usuario" placeholder="Email"
-                    required="true"/>
+      <aside class="cadastro">
+        <form class="cadastro-form" action="#">
+          
+          <fieldset class="cadastro-form-fieldset">
+            <legend class="cadastro-form-fieldset-legend--header">Cadastro</legend>
+            <div class="form-container">
+              <label for="email" class="cadastro-form-label">
+                E-mail</label>
+              <input id="email" class="cadastro-form-input email"
+                    type="email" required="true"/>
+            </div>
+          
+            <div class="form-container">
+              <label for="senha" class="cadastro-form-label">
+                Senha</label>
+              <input id="senha" class="cadastro-form-input senha"
+                      type="password" name="senha-usuario" required="true"/>
+            </div>
+
+            <div class="form-container">
+              <label for="matricula" class="cadastro-form-label">
+                Matrícula ou Siape</label>
+              <input id="matricula" class="cadastro-form-input matricula"
+                  type="text" name="matricula-usuario"  required="true"/>
+            </div>
+
+            <div class="form-container">
+              <label for="data-nascimento" class="cadastro-form-label">
+                Data de Nascimento</label>
+              <input id="data-nascimento" class="cadastro-form-input nascimento"
+                  type="date" name="nascimento-usuario" required="true"/>
+            </div>
+            <fieldset class="cadastro-form-fieldset--radio">
+              <legend class="cadastro-form-fieldset-legend">
+                Escolha seu tipo de Usuário:
+              </legend>
+              <div class="form-container-radio">
+                <div>
+                  <input id="aluno" name="tipo" type="radio" />
+                  <label for="aluno">Aluno</label>
+                </div>
+                <div>
+                  <input id="prof" name="tipo" type="radio"/>
+                  <label for="prof">Professor</label>
+                </div>
+                <div>
+                  <input id="ta" name="tipo" type="radio" /> 
+                  <label for="ta">Técnico Administrativo</label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-container">
+                <button class="cadastro-form-submit"
+                      type="submit">Cadastrar</button>
             </div>
           </fieldset>
-          <fieldset class="conteudo-cadastro-form-fieldset">
-            <legend class="conteudo-cadastro-form-legend"
-                    for="senha-usuario">Senha</legend>
-            <div>
-              <input class="conteudo-cadastro-form-input senha"
-                    type="password" name="senha-usuario" placeholder="Senha"
-                    required="true"/>
-            </div>
-          </fieldset>
-          <fieldset class="conteudo-cadastro-form-fieldset">
-            <legend class="conteudo-cadastro-form-legend"
-                    for="matricula-usuario">Matricula</legend>
-            <div>
-              <input class="conteudo-cadastro-form-input matricula"
-                    type="text" name="matricula-usuario"
-                    placeholder="012345INFQ" required="true"/>
-            </div>
-          </fieldset>
-          <fieldset class="conteudo-cadastro-form-fieldset">
-            <legend class="conteudo-cadastro-form-legend"
-                    for="nascimento-usuario">Data de Nascimento</legend>
-            <div>
-              <input class="conteudo-cadastro-form-input nascimento"
-                    type="date" name="nascimento-usuario" required="true"/>
-            </div>
-          </fieldset>
-          <button class="conteudo-cadastro-form-submit"
-                  type="submit">Cadastrar</button>
         </form>
       </aside>
     </div>
