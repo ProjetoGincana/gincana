@@ -11,22 +11,22 @@
           alt="Logo da Gincana IFSul"/>
 
       <aside class="cabecalho-login">
-        <form id="login-form" class="cabecalho-login-form" action="/login" method="POST">
-          <fieldset class="cabecalho-login-form-fieldset">
-            <legend class="cabecalho-login-form-legend--header">Login</legend>
-            <div class="form-container">
-              <input class="cabecalho-login-form-input email"
+        <form id="login-form" action="/login" method="POST">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Login</legend>
+            <div class="form__container">
+              <input class="form__input form__input--cabecalho"
                     type="email" name="username" placeholder="Email"
                     required="true" autofocus="true"/>
             </div>
             
-            <div class="form-container">
-              <input class="cabecalho-login-form-input senha"
+            <div class="form__container">
+              <input class="form__input form__input--cabecalho"
                     type="password" name="password" placeholder="Senha"
                     required="true"/>
             </div>
-            <div class="form-container">
-              <button class="cabecalho-login-form-submit"
+            <div class="form__container">
+              <button class="form__submit form__submit--cabecalho"
                   type="submit">Entrar</button>
             </div>
           </fieldset>
@@ -36,7 +36,7 @@
 
         <section class="cabecalho-login-visitante">
           <h2>Não é um usuário? Acesse como visitante!</h2>
-          <button class="cabecalho-login-visitante-submit"
+          <button class="form__submit form__submit--cabecalho"
                   type="submit">Visitante</button>
         </section>
       </aside>
@@ -46,7 +46,7 @@
   <main class="conteudo">
     <div class="container">
       <section class="conteudo-informacoes">
-        <h1 class="conteudo-informacoes-titulo">Sobre a Gincana</h1>
+        <h1 class="titulo">Sobre a Gincana</h1>
         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -73,43 +73,40 @@
       <div class="conteudo-linha"></div>
 
       <aside class="cadastro">
-        <form class="cadastro-form" 
-          action="/cadastro" method="post" th:object="${usuario}">
-          
-          <fieldset class="cadastro-form-fieldset">
-            <legend class="cadastro-form-fieldset-legend--header">Cadastro</legend>
-            <div class="form-container">
-              <label for="email" class="cadastro-form-label">
+        <h1 class="titulo">Cadastro</h1>        
+        <form action="/cadastro" method="post" th:object="${usuario}">
+          <div class="form__container">
+              <label for="email" class="form__label">
                 E-mail</label>
-              <input id="email" class="cadastro-form-input email"
-                    th:errorclass="form-input-erro" type="email" required="true" th:field="*{email}"/>
+              <input id="email" class="form__input email" required="true"
+                    th:errorclass="form__input--erro" type="email" th:field="*{email}"/>
             </div>
           
-            <div class="form-container">
-              <label for="senha" class="cadastro-form-label">
+            <div class="form__container">
+              <label for="senha" class="form__label">
                 Senha</label>
-              <input id="senha" class="cadastro-form-input senha"
-                    th:errorclass="form-input-erro" type="password" th:field="*{senha}"/>
+              <input id="senha" class="form__input senha" required="true"
+                    th:errorclass="form__input--erro" type="password" th:field="*{senha}"/>
             </div>
 
-            <div class="form-container">
-              <label for="matricula" class="cadastro-form-label">
+            <div class="form__container">
+              <label for="matricula" class="form__label">
                 Matrícula ou Siape</label>
-              <input id="matricula" class="cadastro-form-input matricula"
-                  th:errorclass="form-input-erro" type="text" required="true" th:field="*{identificacao}"/>
+              <input id="matricula" class="form__input matricula" required="true"
+                  th:errorclass="form__input--erro" type="text" th:field="*{identificacao}"/>
             </div>
 
-            <div class="form-container">
-              <label for="data-nascimento" class="cadastro-form-label">
+            <div class="form__container">
+              <label for="data-nascimento" class="form__label">
                 Data de Nascimento</label>
-              <input id="data-nascimento" class="cadastro-form-input nascimento"
-                  th:errorclass="form-input-erro" type="date" required="true" th:field="*{nascimento}"/>
+              <input id="data-nascimento" class="form__input nascimento" required="true"
+                  th:errorclass="form__input--erro" type="date" th:field="*{nascimento}"/>
             </div>
-            <fieldset class="cadastro-form-fieldset--radio">
+            <fieldset class="form__fieldset form__fieldset--radio">
               <legend class="cadastro-form-fieldset-legend">
                 Escolha seu tipo de Usuário:
               </legend>
-              <div class="form-container-radio">
+              <div class="form__container--radio">
                 <div>
                   <input id="aluno" name="tipo" type="radio"
                     th:field="*{tipo}" th:value="ALUNO"/>
@@ -127,16 +124,15 @@
                 </div>
               </div>
             </fieldset>
-            <div class="form-container--erro" th:if="${#fields.hasErrors('*')}">
+            <div class="form__container--erro" th:if="${#fields.hasErrors('*')}">
               <ul>
                 <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
               </ul>
             </div>
-            <div class="form-container">
-                <button class="cadastro-form-submit"
+            <div class="form__container">
+                <button class="form__submit form__submit--body"
                       type="submit">Cadastrar</button>
             </div>
-          </fieldset>
         </form>
       </aside>
     </div>

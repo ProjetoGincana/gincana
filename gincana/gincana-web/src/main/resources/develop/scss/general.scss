@@ -37,6 +37,15 @@ h2,
 	padding-bottom: 2em;
 }
 
+.container__title{
+	text-align: center;
+	margin: 1em auto;
+}
+
+.container--medium {
+	width: 40%;
+}
+
 .cabecalho .container {
 	display: flex;
 	align-items: center;
@@ -50,6 +59,10 @@ h2,
 }
 
 /*Corpo*/
+.titulo {
+	text-align: center;
+}
+
 .conteudo .container {
 	margin-top: 2em;
 	display: flex;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pt-br">
+
+<th:block th:replace="fragments :: head('Gincana - Cadastrado')" />
+
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <img class="cabecalho-logo" src="img/logo.png"
+          alt="Logo da Gincana IFSul"/>
+
+      <aside class="cabecalho-login">
+        <form id="login-form" class="login__form" action="/login" method="POST">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Login</legend>
+            <div class="form__container">
+              <input class="form__input form__input--cabecalho"
+                    type="email" name="username" placeholder="Email"
+                    required="true" autofocus="true"/>
+            </div>
+            
+            <div class="form__container">
+              <input class="form__input form__input--cabecalho"
+                    type="password" name="password" placeholder="Senha"
+                    required="true"/>
+            </div>
+            <div class="form__container">
+              <button class="form__submit form__submit--cabecalho"
+                  type="submit">Entrar</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="cabecalho-linha"></div>
+
+        <section class="cabecalho-login-visitante">
+          <h2>Não é um usuário? Acesse como visitante!</h2>
+          <button class="form__submit form__submit--cabecalho"
+                  type="submit">Visitante</button>
+        </section>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="container__title">Cadastrado com Sucesso!</h1>
+      <div class="container container--medium">
+        <form id="login-form" class="login__form" action="/login" method="POST">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Login</legend>
+            <div class="form__container">
+              <input class="form__input email"
+                    type="email" name="username" placeholder="Email"
+                    required="true" autofocus="true"/>
+            </div>
+            
+            <div class="form__container">
+              <input class="form__input senha"
+                    type="password" name="password" placeholder="Senha"
+                    required="true"/>
+            </div>
+            <div class="form__container">
+              <button class="form__submit form__submit--body"
+                  type="submit">Entrar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </main>
+  <th:block th:replace="fragments :: footer" />
+</body>
+</html>

@@ -1,17 +1,6 @@
 
-input {
-	background-color: transparent;
-	border: none;
-	border: 1px solid transparent;	
-	border-bottom: 1px solid #000;
-}
-
 .cabecalho-login {
 	display: flex;
-}
-
-.cabecalho-login-form {
-	flex-grow: 1;
 }
 
 .cabecalho-login-visitante {
@@ -29,44 +18,51 @@ input {
 	margin-right: 5%;
 }
 
-.cabecalho-login-form-fieldset,
-.cadastro-form-fieldset {
+input {
+	background-color: transparent;
+	border: none;
+	border: 1px solid transparent;	
+	border-bottom: 1px solid #000;
+}
+
+.form__fieldset {
 	border: 0;
 }
 
-.cadastro-form-fieldset--radio {
-	border: 0;
-	margin-left: 8%;
-	text-align: left;
-}
-
-.cabecalho-login-form-legend--header,
-.cadastro-form-fieldset-legend--header {
+.form__legend {
 	font-size: 2em;
 	font-weight: bold;
 }
-.cadastro-form-fieldset-legend {
+
+.form__legend--cadastro { 
 	font-weight: bold;
 	font-size: 1.1em;
 }
 
-
-.cabecalho-login-form-input,
-.cadastro-form-input {
+.form__input {
 	display: block;
-	padding: 7px;
+	padding: 10px 7px 2px 2px;
+	margin: 0 auto 10px auto;
 	width: 80%;
+}
+
+.form__input--cabecalho {
+	padding: 10px;
 	margin: 0 auto;
 }
 
-.cadastro-form-label {
-	position: absolute;
-	top: -0.2em;
-	left: 10%;
-	font-size: 0.98em;
+.form__input--cabecalho:focus {
+	border: 1px solid lightskyblue;
+	transition: border;
+	transition-duration: 1s;
 }
 
-.form-container--erro {
+.form__container {
+	position: relative;
+	padding: 10px;
+}
+
+.form__container--erro {
 	margin: 10px;
 	border: 1px dashed #cc5151;
 	border-radius: 10px;
@@ -74,54 +70,36 @@ input {
 	background-color: #ffeaea;
 }
 
-.form-input-erro + label {
-	color: red;
-}
-
-.form-input-erro {
-	border-bottom-color: red;
-}
-
-.form-container {
-	position: relative;
-	padding: 10px;
-}
-
-.form-container-radio {
+.form__container--radio {
 	margin-top: 0;
 }
 
-.cabecalho-login-form-input:focus {
-	border: 1px solid lightskyblue;
-	transition: border;
-	transition-duration: 1s;
+.form__input--erro {
+	border-bottom-color: red;
 }
 
 .cabecalho-login-visitante h1 {
 	flex-grow: 1;
 }
 
-.cabecalho-login-form-submit,
-.cabecalho-login-visitante-submit,
-.cadastro-form-submit {
+.form__submit {
 	display: block;
 	text-align: center;
 	margin: 0 auto;
 	height: 2em;
+	border-radius: 5px;
 	background-color: transparent;
 	text-transform: uppercase;
-	border-radius: 5px;
 }
 
-.cabecalho-login-form-submit,
-.cabecalho-login-visitante-submit {
+.form__submit--cabecalho {
 	color: #FFF;
 }
 
-.conteudo-informacoes-titulo {
-	width: 35%;
+.form__submit--body {
+	color: black;
+	width: 70%;
 }
-
 .cadastro {
 	width: 35%;
 	display: flex;
@@ -129,8 +107,17 @@ input {
 	flex-grow: 3;
 }
 
-.cadastro-form-submit {
-	width: 70%;
+.form__label {
+	position: absolute;
+	top: -0.4em;
+	left: 10%;
+	font-size: 0.98em;
+}
+
+.form__fieldset--radio {
+	border: 0;
+	margin-left: 8%;
+	text-align: left;
 }
 
 @media(max-width: 1014px){
